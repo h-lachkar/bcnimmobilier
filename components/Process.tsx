@@ -8,31 +8,31 @@ const steps = [
     n: "1",
     title: "Recherche",
     desc: "Nous ciblons vos besoins et sélectionnons les meilleures options pour vous.",
-    icon: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/64c8c243-d1bb-45c4-8708-2f78f167e7e7/search.png",
+    icon: "/images/process/search.png",
   },
   {
     n: "2",
     title: "Visites",
     desc: "Explorez les appartements qui vous correspondent avec des visites ciblées et gagnez du temps.",
-    icon: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/ec6791a3-8bfe-45ea-9eca-5d709fd4a123/location-mark.png",
+    icon: "/images/process/location-mark.png",
   },
   {
     n: "3",
     title: "Offre",
     desc: "Soumettez une offre avec notre aide pour maximiser vos chances de succès.",
-    icon: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/556766bb-7c31-4206-931d-77a5669dc22d/advertising.png",
+    icon: "/images/process/advertising.png",
   },
   {
     n: "4",
     title: "Signature",
     desc: "Finalisez l'achat en toute sérénité. Nous vous guidons à travers les démarches légales.",
-    icon: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/ccac18f0-68bc-4541-b448-318d886a7262/agreement.png",
+    icon: "/images/process/agreement.png",
   },
   {
     n: "5",
     title: "Tapas et Célébration",
     desc: "Célébrons votre nouvelle vie à Barcelone autour de tapas !",
-    icon: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/4bf1ef1b-2240-482f-917e-9fcf703444eb/celebration.png",
+    icon: "/images/process/celebration.png",
   },
 ];
 

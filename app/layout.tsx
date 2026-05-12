@@ -450,7 +450,7 @@ export default function RootLayout({
       { "@type": "Country", name: "Spain" },
     ],
     url: SITE_URL,
-    image: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/346f5d5b-3c8c-4f78-81a5-5863e0ce668d/IMG_2184.jpeg",
+    image: "/images/chloe.jpeg",
   };
 
   return (
@@ -463,11 +463,9 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/04824028-9445-4487-917b-b840841de612/WhatsApp+Image+2022-03-13+at+16.54.16.jpeg"
+          href="/images/apartment-hero.jpeg"
           fetchPriority="high"
         />
-        <link rel="dns-prefetch" href="//images.squarespace-cdn.com" />
-        <link rel="preconnect" href="https://images.squarespace-cdn.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//assets.calendly.com" />
         <link rel="dns-prefetch" href="//wa.me" />
 

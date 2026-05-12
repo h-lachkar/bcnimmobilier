@@ -88,7 +88,7 @@ export default function Contact() {
               <div className="relative shrink-0">
                 <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-orange/20">
                   <img
-                    src="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/346f5d5b-3c8c-4f78-81a5-5863e0ce668d/IMG_2184.jpeg"
+                    src="/images/chloe.jpeg"
                     alt="Chloé"
                     className="w-full h-full object-cover"
                   />

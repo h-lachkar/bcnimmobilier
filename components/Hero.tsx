@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <motion.div className="absolute inset-0 scale-110" style={{ y: bgY }}>
           <img
-            src="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/04824028-9445-4487-917b-b840841de612/WhatsApp+Image+2022-03-13+at+16.54.16.jpeg"
+            src="/images/apartment-hero.jpeg"
             alt="Appartement intérieur à Barcelone — salon avec vue, sélectionné par BCN-Immobilier"
             className="w-full h-full object-cover"
             fetchPriority="high"

@@ -22,7 +22,7 @@ export default function Services() {
     <section id="services" className="bg-cream">
       {/* Service 1 — Recherche, image right */}
       <ServiceRow
-        image="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/04824028-9445-4487-917b-b840841de612/WhatsApp+Image+2022-03-13+at+16.54.16.jpeg"
+        image="/images/apartment-hero.jpeg"
         imageAlt="Appartement à Barcelone sélectionné par BCN-Immobilier"
         imageRight
         title={
@@ -41,7 +41,7 @@ export default function Services() {
       {/* Service 2 — Forfait 1%, image left */}
       <div className="bg-offwhite">
         <ServiceRow
-          image="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/33bc9aa7-65b8-4536-91da-75d1b8ffd17f/UNADJUSTEDNONRAW_thumb_990c.jpg"
+          image="/images/service-forfait.jpg"
           imageAlt="Accompagnement achat immobilier Barcelone — forfait 1%"
           title={
             <>
@@ -72,7 +72,7 @@ export default function Services() {
 
       {/* Service 3 — Démarches, image right */}
       <ServiceRow
-        image="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/6d0f79ff-6dcc-4da3-9190-74142d6632df/7Z7A7905.jpg"
+        image="/images/service-demarches.jpg"
         imageAlt="Démarches administratives à Barcelone — NIE, notaire, banque"
         imageRight
         title={
