@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #1F1F1F;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #D4602E;
+  color: #FFFFFF;
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Hand-drawn ellipse highlight using SVG — like the original site */
+.circle-highlight {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 0.15em;
+}
+.circle-highlight::after {
+  content: "";
+  position: absolute;
+  inset: -10% 0 -10% 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 100' preserveAspectRatio='none'><ellipse cx='150' cy='52' rx='143' ry='42' fill='none' stroke='%23D4602E' stroke-width='3.5' stroke-linecap='round' transform='rotate(-1.5 150 50)'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Anchor scroll offset so titles aren't hidden by fixed nav */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* Hide scrollbar for slider */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.lift:hover {
+  transform: translateY(-6px);
+}
+
+/* Pill button - like the original */
+.btn-pill {
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #3A8AA8;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-pill:not(.hidden) {
+  display: inline-flex;
+}
+.btn-pill:hover {
+  background: #D4602E;
+  transform: translateY(-2px);
+}
+
+.btn-pill-orange {
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #D4602E;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-pill-orange:not(.hidden) {
+  display: inline-flex;
+}
+.btn-pill-orange:hover {
+  background: #A84818;
+  transform: translateY(-2px);
+}
