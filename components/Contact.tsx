@@ -1,6 +1,22 @@
 "use client";
 
 import { useEffect } from "react";
+import { motion, type Variants } from "framer-motion";
+import CircleHighlight from "./CircleHighlight";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.75, ease: "easeOut" },
+  },
+};
+
+const stagger: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+};
 
 export default function Contact() {
   useEffect(() => {
@@ -18,30 +34,43 @@ export default function Contact() {
     <section id="contact" className="bg-cream py-16 lg:py-24 relative">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
         {/* Eyebrow */}
-        <div className="flex items-center gap-3 mb-6">
+        <motion.div
+          className="flex items-center gap-3 mb-6"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <span className="w-10 h-px bg-orange" />
           <span className="text-orange text-[10px] uppercase tracking-[0.3em] font-medium">
             On en discute ?
           </span>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* LEFT — title + intro + contact methods */}
-          <div className="lg:col-span-5">
-            <h2 className="font-display font-semibold text-2xl sm:text-3xl lg:text-5xl leading-[1.05] tracking-tight text-ink">
+          <motion.div
+            className="lg:col-span-5"
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+          >
+            <motion.h2
+              variants={fadeUp}
+              className="font-display font-semibold text-2xl sm:text-3xl lg:text-5xl leading-[1.05] tracking-tight text-ink"
+            >
               Discutons{" "}
-              <span className="circle-highlight">
-                <span className="relative z-10">ensemble</span>
-              </span>{" "}
+              <CircleHighlight>ensemble</CircleHighlight>{" "}
               de votre projet.
-            </h2>
+            </motion.h2>
 
-            <p className="mt-4 text-body text-[13px] sm:text-sm lg:text-base leading-relaxed max-w-md">
+            <motion.p variants={fadeUp} className="mt-4 text-body text-[13px] sm:text-sm lg:text-base leading-relaxed max-w-md">
               Réservez 30 minutes avec Chloé dans le calendrier ci-contre, ou
               contactez-la directement. Réponse{" "}
               <span className="text-ink font-medium">sous 24h</span>, en
               français, par un humain.
-            </p>
+            </motion.p>
 
             {/* Availability badge */}
             <div className="mt-6 inline-flex items-center gap-2.5 bg-white border border-black/8 rounded-full px-4 py-2 shadow-sm">
@@ -158,10 +187,16 @@ export default function Contact() {
                 </span>
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT — Calendly widget */}
-          <div className="lg:col-span-7">
+          <motion.div
+            className="lg:col-span-7"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.85, ease: "easeOut", delay: 0.15 }}
+          >
             <div className="bg-white rounded-3xl border border-black/5 shadow-sm overflow-hidden">
               <div className="px-6 lg:px-8 py-5 border-b border-black/5 flex items-center justify-between flex-wrap gap-3">
                 <div>
@@ -185,7 +220,7 @@ export default function Contact() {
                 style={{ minWidth: "320px", height: "650px" }}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

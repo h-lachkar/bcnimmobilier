@@ -1,30 +1,63 @@
+"use client";
+
+import { motion, type Variants } from "framer-motion";
+import CircleHighlight from "./CircleHighlight";
+
+const slideLeft: Variants = {
+  hidden: { opacity: 0, x: -50 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.9, ease: "easeOut" },
+  },
+};
+
+const slideRight: Variants = {
+  hidden: { opacity: 0, x: 50 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.9, ease: "easeOut" },
+  },
+};
+
 export default function About() {
   return (
     <section id="expertise" className="py-16 lg:py-24 bg-cream">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image left */}
-          <div className="order-2 lg:order-1">
+          <motion.div
+            className="order-2 lg:order-1"
+            variants={slideLeft}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+          >
             <div className="rounded-[3rem] overflow-hidden aspect-[4/5]">
               <img
                 src="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/346f5d5b-3c8c-4f78-81a5-5863e0ce668d/IMG_2184.jpeg"
                 alt="Chloé, agent immobilier français à Barcelone, fondatrice de BCN-Immobilier depuis 2016"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
                 decoding="async"
                 width="800"
                 height="1000"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Text right */}
-          <div className="order-1 lg:order-2">
+          <motion.div
+            className="order-1 lg:order-2"
+            variants={slideRight}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+          >
             <h2 className="font-display font-semibold text-2xl sm:text-3xl lg:text-5xl leading-[1.1] tracking-tight text-ink">
               Expertise &amp;{" "}
-              <span className="circle-highlight">
-                <span className="relative z-10">réactivité</span>
-              </span>{" "}
+              <CircleHighlight>réactivité</CircleHighlight>{" "}
               à votre service.
             </h2>
 
@@ -80,7 +113,7 @@ export default function About() {
                 <span>→</span>
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import CircleHighlight from "./CircleHighlight";
 
 const clients = [
   { name: "Brigitte, Michel & Dune", image: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/dd01394d-2189-47a5-bd5b-1a74e704b4df/WhatsApp+Image+2025-01-14+at+08.16.08.jpeg" },
@@ -81,12 +83,16 @@ export default function Clients() {
     <section id="clients" className="py-16 lg:py-24 bg-offwhite overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+        <motion.div
+          className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="max-w-2xl">
             <h2 className="font-display font-semibold text-2xl sm:text-3xl lg:text-5xl leading-[1.1] tracking-tight text-ink">
-              <span className="circle-highlight">
-                <span className="relative z-10">+100 familles</span>
-              </span>{" "}
+              <CircleHighlight>+100 familles</CircleHighlight>{" "}
               françaises installées à Barcelone.
             </h2>
             <p className="mt-4 text-body text-[13px] sm:text-sm lg:text-base leading-relaxed">
@@ -95,7 +101,6 @@ export default function Clients() {
               mois ou années après leur achat.
             </p>
           </div>
-
           {/* Controls */}
           <div className="flex items-center justify-between sm:justify-end gap-4 w-full sm:w-auto">
             <div className="font-mono text-sm text-body/70">
@@ -123,7 +128,7 @@ export default function Clients() {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Slider track - extends beyond container for edge fade */}

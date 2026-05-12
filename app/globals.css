@@ -38,23 +38,7 @@ body {
   to { transform: translateX(-50%); }
 }
 
-/* Hand-drawn ellipse highlight using SVG — like the original site */
-.circle-highlight {
-  position: relative;
-  display: inline-block;
-  white-space: nowrap;
-  padding: 0 0.15em;
-}
-.circle-highlight::after {
-  content: "";
-  position: absolute;
-  inset: -10% 0 -10% 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 100' preserveAspectRatio='none'><ellipse cx='150' cy='52' rx='143' ry='42' fill='none' stroke='%23D4602E' stroke-width='3.5' stroke-linecap='round' transform='rotate(-1.5 150 50)'/></svg>");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 1;
-}
+/* circle-highlight — animated SVG rendered by CircleHighlight component */
 
 /* Anchor scroll offset so titles aren't hidden by fixed nav */
 section[id] {

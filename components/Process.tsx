@@ -1,3 +1,8 @@
+"use client";
+
+import { motion, type Variants } from "framer-motion";
+import CircleHighlight from "./CircleHighlight";
+
 const steps = [
   {
     n: "1",
@@ -31,32 +36,63 @@ const steps = [
   },
 ];
 
+const stepVariant: Variants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.65, ease: "easeOut" },
+  },
+};
+
 export default function Process() {
   return (
     <section id="processus" className="py-16 lg:py-24 bg-cream">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-16 lg:mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="font-display font-semibold text-2xl sm:text-3xl lg:text-5xl leading-[1.1] tracking-tight text-ink">
             Comment{" "}
-            <span className="circle-highlight">
-              <span className="relative z-10">acheter</span>
-            </span>{" "}
+            <CircleHighlight>acheter</CircleHighlight>{" "}
             un appartement à Barcelone
           </h2>
-        </div>
+        </motion.div>
 
         {/* 5 steps horizontal */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.13, delayChildren: 0.05 } },
+          }}
+        >
           {steps.map((step, i) => (
-            <div key={i} className="text-center group">
+            <motion.div
+              key={i}
+              variants={stepVariant}
+              className="text-center group"
+            >
               {/* Icon circle */}
-              <div className="mx-auto w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-offwhite flex items-center justify-center p-5 group-hover:bg-orange/10 transition-colors mb-4">
+              <motion.div
+                className="mx-auto w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-offwhite flex items-center justify-center p-5 mb-4"
+                whileHover={{ scale: 1.1, backgroundColor: "rgba(212,96,46,0.1)" }}
+                transition={{ duration: 0.3 }}
+              >
                 <img
                   src={step.icon}
                   alt=""
                   className="w-full h-full object-contain"
                 />
-              </div>
+              </motion.div>
               <div className="text-orange text-[10px] uppercase tracking-[0.3em] font-medium mb-2">
                 Étape {step.n}
               </div>
@@ -66,9 +102,9 @@ export default function Process() {
               <p className="text-xs text-body leading-relaxed max-w-[200px] mx-auto">
                 {step.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
