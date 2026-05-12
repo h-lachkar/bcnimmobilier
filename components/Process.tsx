@@ -89,7 +89,7 @@ export default function Process() {
               >
                 <img
                   src={step.icon}
-                  alt=""
+                  alt={`Étape ${step.n} — ${step.title}`}
                   className="w-full h-full object-contain"
                 />
               </motion.div>
