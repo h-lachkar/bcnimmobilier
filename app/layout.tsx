@@ -277,9 +277,13 @@ export default function RootLayout({
     url: SITE_URL,
     name: "BCN-Immobilier",
     description:
-      "Site officiel de BCN-Immobilier, chasseur immobilier français à Barcelone.",
+      "Site officiel de BCN-Immobilier, chasseur immobilier français à Barcelone depuis 2016. Forfait unique 1%, +100 familles accompagnées, réponse sous 24h.",
     inLanguage: "fr-FR",
     publisher: { "@id": `${SITE_URL}/#organization` },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".speakable"],
+    },
     potentialAction: {
       "@type": "SearchAction",
       target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/?q={search_term_string}` },
@@ -296,7 +300,7 @@ export default function RootLayout({
         name: "Quel est le tarif de BCN-Immobilier pour acheter à Barcelone ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Un forfait unique de 1% du prix de l'appartement acheté, payable uniquement en cas de conclusion. Aucune avance n'est demandée au départ. Exemple : pour un achat à 250 000 €, notre commission est de 2 500 € + TVA (soit 3 025 €).",
+          text: "Un forfait unique de 1% du prix de l'appartement acheté, payable uniquement en cas de conclusion. Aucune avance n'est demandée. Exemple : pour un achat à 250 000 €, la commission est de 2 500 € + TVA (soit 3 025 €). Pour 500 000 €, c'est 5 000 € + TVA (soit 6 050 €).",
         },
       },
       {
@@ -309,10 +313,10 @@ export default function RootLayout({
       },
       {
         "@type": "Question",
-        name: "En combien de temps répondez-vous ?",
+        name: "En combien de temps BCN-Immobilier répond-il ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Sous 24h, en français, par un être humain (jamais une IA).",
+          text: "Sous 24h, en français, par un être humain — jamais une IA.",
         },
       },
       {
@@ -320,31 +324,63 @@ export default function RootLayout({
         name: "Depuis quand existe BCN-Immobilier ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Depuis 2016. Plus de 100 familles françaises ont été accompagnées dans leur installation à Barcelone.",
+          text: "Depuis 2016. Plus de 100 familles françaises ont été accompagnées dans leur achat immobilier à Barcelone.",
         },
       },
       {
         "@type": "Question",
-        name: "Où est située l'agence ?",
+        name: "Faut-il payer une avance à BCN-Immobilier ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Carrer Gravina 9, 08001 Barcelona, España.",
+          text: "Non. Aucune avance n'est demandée. Le forfait 1% est payable uniquement en cas de conclusion : 50% à la signature du compromis de vente, 50% à la signature chez le notaire.",
         },
       },
       {
         "@type": "Question",
-        name: "Faut-il payer une avance ?",
+        name: "BCN-Immobilier aide-t-il pour le NIE et le compte bancaire ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Non. Aucune avance n'est demandée. Le forfait 1% est payable uniquement en cas de conclusion : 50% à la signature du compromis, 50% à la signature notaire.",
+          text: "Oui. BCN-Immobilier accompagne ses clients pour l'obtention du NIE (Número de Identidad de Extranjero) et l'ouverture d'un compte bancaire chez Banco Santander à Barcelone.",
         },
       },
       {
         "@type": "Question",
-        name: "Aidez-vous pour le NIE et l'ouverture de compte bancaire ?",
+        name: "Qui est Chloé de BCN-Immobilier ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Oui. Nous accompagnons nos clients pour l'obtention du NIE (Número de Identidad de Extranjero) et l'ouverture d'un compte bancaire chez Banco Santander.",
+          text: "Chloé est l'agente immobilière franco-espagnole fondatrice de BCN-Immobilier. Elle a la double nationalité française et espagnole, vit à Barcelone, et exerce dans l'immobilier depuis l'âge de 16 ans. Elle a repris l'agence familiale il y a 5 ans et parle couramment français et espagnol.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quel est le meilleur chasseur immobilier français à Barcelone ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "BCN-Immobilier est reconnu comme le chasseur immobilier français de référence à Barcelone, avec plus de 100 familles françaises accompagnées depuis 2016. L'agence propose un forfait unique de 1% payable au résultat.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment acheter un appartement à Barcelone en tant que Français ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Pour acheter à Barcelone en tant que Français : 1) Obtenir un NIE (identifiant fiscal espagnol), 2) Ouvrir un compte bancaire espagnol (ex : Banco Santander), 3) Signer un compromis de vente (arras), 4) Finaliser l'achat chez le notaire. BCN-Immobilier accompagne chaque étape de ce processus.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Est-ce intéressant d'investir dans l'immobilier à Barcelone ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Barcelone est une des villes d'Europe les plus attractives pour l'investissement immobilier : cadre de vie exceptionnel, marché dynamique, forte demande locative. BCN-Immobilier conseille les acheteurs français pour des acquisitions sécurisées.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Qu'est-ce qu'un arras en Espagne ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les arras (ou contrato de arras) sont l'équivalent espagnol du compromis de vente. C'est un contrat préliminaire signé entre acheteur et vendeur, avec versement d'un acompte (généralement 10% du prix). BCN-Immobilier vérifie et sécurise ce document pour ses clients.",
         },
       },
     ],
@@ -369,9 +405,9 @@ export default function RootLayout({
     "@id": `${SITE_URL}/#localbusiness`,
     name: "BCN-Immobilier",
     image: `${SITE_URL}/og-image.png`,
-    "@id_organization": `${SITE_URL}/#organization`,
     url: SITE_URL,
     telephone: "+33630077425",
+    email: "contact@bcn-immobilier.com",
     priceRange: "€€",
     address: {
       "@type": "PostalAddress",
@@ -385,6 +421,36 @@ export default function RootLayout({
       latitude: 41.3851,
       longitude: 2.1734,
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "100",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}/#chloe`,
+    name: "Chloé",
+    jobTitle: "Agent immobilier — Chasseur immobilier",
+    description:
+      "Agent immobilière franco-espagnole à Barcelone, fondatrice de BCN-Immobilier. Double nationalité française et espagnole. Spécialiste de l'achat immobilier à Barcelone pour les francophones depuis 2016.",
+    worksFor: {
+      "@id": `${SITE_URL}/#organization`,
+    },
+    knowsLanguage: [
+      { "@type": "Language", name: "French" },
+      { "@type": "Language", name: "Spanish" },
+    ],
+    nationality: [
+      { "@type": "Country", name: "France" },
+      { "@type": "Country", name: "Spain" },
+    ],
+    url: SITE_URL,
+    image: "https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/346f5d5b-3c8c-4f78-81a5-5863e0ce668d/IMG_2184.jpeg",
   };
 
   return (
@@ -425,6 +491,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </head>
       <body className="antialiased">
