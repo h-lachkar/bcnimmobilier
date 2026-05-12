@@ -11,17 +11,19 @@ import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 export default function Home() {
   return (
-    <main className="bg-cream">
+    <>
       <Nav />
-      <Hero />
-      <Marquee />
-      <About />
-      <Services />
-      <Process />
-      <Clients />
-      <Contact />
+      <main id="main-content" className="bg-cream">
+        <Hero />
+        <Marquee />
+        <About />
+        <Services />
+        <Process />
+        <Clients />
+        <Contact />
+      </main>
       <Footer />
       <WhatsAppWidget />
-    </main>
+    </>
   );
 }

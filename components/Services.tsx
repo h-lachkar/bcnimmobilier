@@ -76,6 +76,7 @@ export default function Services() {
 
 function ServiceRow({
   image,
+  imageAlt = "",
   imageRight,
   title,
   paragraphs,
@@ -84,6 +85,7 @@ function ServiceRow({
   ctaLabel,
 }: {
   image: string;
+  imageAlt?: string;
   imageRight?: boolean;
   title: React.ReactNode;
   paragraphs: string[];
@@ -98,7 +100,15 @@ function ServiceRow({
           {/* Image */}
           <div className={imageRight ? "lg:order-2" : ""}>
             <div className="rounded-[3rem] overflow-hidden aspect-[4/5]">
-              <img src={image} alt="" className="w-full h-full object-cover" />
+              <img
+                src={image}
+                alt={imageAlt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="1000"
+              />
             </div>
           </div>
 

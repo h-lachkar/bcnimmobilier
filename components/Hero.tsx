@@ -3,13 +3,20 @@ export default function Hero() {
     <section
       id="top"
       className="relative min-h-screen overflow-hidden"
+      aria-label="Présentation BCN-Immobilier"
     >
       {/* Background apartment image — like original */}
       <div className="absolute inset-0">
         <img
           src="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/04824028-9445-4487-917b-b840841de612/WhatsApp+Image+2022-03-13+at+16.54.16.jpeg"
-          alt="Appartement à Barcelone"
+          alt="Appartement intérieur à Barcelone — salon avec vue, sélectionné par BCN-Immobilier"
           className="w-full h-full object-cover"
+          // @ts-expect-error - fetchpriority is valid HTML
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          width="1600"
+          height="1066"
         />
         {/* Soft overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60" />
@@ -30,19 +37,25 @@ export default function Hero() {
             <span className="circle-highlight">
               <span className="relative z-10">complet sécurisé</span>
             </span>
-            .
+            . Chasseur immobilier français à Barcelone depuis 2016.
           </p>
 
           <div className="mt-14 flex flex-wrap items-center justify-center gap-5">
-            <a href="#contact" className="btn-pill-orange">
+            <a
+              href="#contact"
+              className="btn-pill-orange"
+              aria-label="Nous contacter pour démarrer votre projet"
+            >
               Contactez-nous
-              <span>→</span>
+              <span aria-hidden="true">→</span>
             </a>
             <a
               href="tel:+33630077425"
               className="inline-flex items-center gap-2 px-6 py-4 text-sm tracking-wide uppercase text-ink bg-white rounded-full hover:bg-ink hover:text-white transition-colors font-medium shadow-lg"
+              aria-label="Téléphoner au +33 6 30 07 74 25"
             >
-              🇫🇷 +33 6 30 07 74 25
+              <span aria-hidden="true">🇫🇷</span>
+              <span lang="fr">+33 6 30 07 74 25</span>
             </a>
           </div>
         </div>
@@ -51,13 +64,13 @@ export default function Hero() {
         <a
           href="#expertise"
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors group cursor-pointer"
-          aria-label="Découvrir"
+          aria-label="Découvrir les services"
         >
           <div className="text-[10px] uppercase tracking-[0.3em]">
             Découvrir
           </div>
           <div className="w-px h-12 bg-white/40 group-hover:bg-white transition-colors" />
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="animate-bounce">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="animate-bounce" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>

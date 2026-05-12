@@ -8,8 +8,12 @@ export default function About() {
             <div className="rounded-[3rem] overflow-hidden aspect-[4/5]">
               <img
                 src="https://images.squarespace-cdn.com/content/v1/672f5ef286a4883722caa345/346f5d5b-3c8c-4f78-81a5-5863e0ce668d/IMG_2184.jpeg"
-                alt="Chloé, votre agent immobilier"
+                alt="Chloé, agent immobilier français à Barcelone, fondatrice de BCN-Immobilier depuis 2016"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="1000"
               />
             </div>
           </div>
