@@ -23,7 +23,7 @@ const slideRight: Variants = {
 
 export default function About() {
   return (
-    <section id="expertise" className="py-16 lg:py-24 bg-cream">
+    <section id="expertise" className="py-16 lg:py-24 bg-cream overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image left */}

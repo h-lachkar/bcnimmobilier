@@ -31,7 +31,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="bg-cream py-16 lg:py-24 relative">
+    <section id="contact" className="bg-cream py-16 lg:py-24 relative overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
         {/* Eyebrow */}
         <motion.div
